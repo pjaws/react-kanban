@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import { addBoard } from '../actions';
-import AddBoard from '../components';
+import AddBoard from '../components/AddBoard';
 
 const mapDispatchToProps = dispatch => ({
   addBoard: name => dispatch(addBoard(name)),
