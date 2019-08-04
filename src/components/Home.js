@@ -1,30 +1,29 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import AddBoard from '../containers/AddBoard';
+import '../styles/Home.css';
 
 const Home = ({ boards }) => {
   return (
     <div className='Home'>
       <h1>Choose or create a board to get started!</h1>
-      <div className='boards-list'>
-        <ul>
-          {boards.allIds.map(boardId => (
-            <li key={boardId}>
-              <Link to={`/boards/${boardId}`}>
-                <div className='board-preview'>
-                  <div className='board-preview-title'>
-                    {boards[boardId].title}
-                  </div>
-                  <div className='board-preview-body' />
+      <ul className='boards-list'>
+        {boards.allIds.map(boardId => (
+          <li key={boardId} className='boards-list-item'>
+            <Link to={`/boards/${boardId}`}>
+              <div className='board-tile'>
+                <div className='board-tile-title'>
+                  {boards.byId[boardId].name}
                 </div>
-              </Link>
-            </li>
-          ))}
-          <li>
-            <AddBoard />
+                <div className='board-tile-body' />
+              </div>
+            </Link>
           </li>
-        </ul>
-      </div>
+        ))}
+        <li className='boards-list-item'>
+          <AddBoard />
+        </li>
+      </ul>
     </div>
   );
 };

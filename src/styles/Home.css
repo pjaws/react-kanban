@@ -1,0 +1,12 @@
+.boards-list {
+  display: flex;
+}
+
+.boards-list-item {
+  width: 25%;
+  list-style: none;
+}
+
+.board-tile {
+  background-color: rgb(49, 103, 219);
+}
