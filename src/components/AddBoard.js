@@ -9,6 +9,7 @@ const AddBoard = ({ addBoard }) => {
   const handleChange = event => {
     setInput(event.target.value);
   };
+  const handleReqClose = () => setIsModalOpen(false);
   const handleSubmit = event => {
     event.preventDefault();
     addBoard(input);
@@ -20,7 +21,13 @@ const AddBoard = ({ addBoard }) => {
       <button className='AddBoard' onClick={() => handleClick()}>
         Create new board
       </button>
-      <ReactModal isOpen={isModalOpen} contentLabel='Create a Board'>
+      <ReactModal
+        isOpen={isModalOpen}
+        contentLabel='Create a Board'
+        onRequestClose={handleReqClose}
+        className='add-board-modal'
+        overlayClassName='add-board-overlay'
+      >
         <form onSubmit={handleSubmit}>
           <input
             type='text'
