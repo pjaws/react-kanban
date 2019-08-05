@@ -18,7 +18,7 @@ const AddBoard = ({ addBoard }) => {
 
   return (
     <>
-      <button className='AddBoard' onClick={() => handleClick()}>
+      <button className='btn btn-primary' onClick={() => handleClick()}>
         Create new board
       </button>
       <ReactModal
@@ -31,6 +31,7 @@ const AddBoard = ({ addBoard }) => {
         <form onSubmit={handleSubmit}>
           <input
             type='text'
+            className='input'
             placeholder='Enter a board name'
             onChange={e => handleChange(e)}
           />

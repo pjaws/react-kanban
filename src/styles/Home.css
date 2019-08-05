@@ -2,11 +2,24 @@
   display: flex;
 }
 
+.board-link {
+  text-decoration: none;
+}
+
 .boards-list-item {
-  width: 25%;
+  width: 20%;
   list-style: none;
 }
 
 .board-tile {
-  background-color: rgb(49, 103, 219);
+  height: 4rem;
+  padding: 0.5rem;
+  background-color: rgb(4, 87, 154);
+  border-radius: 0.25rem;
+}
+
+.board-tile-title {
+  color: #fff;
+  font-weight: 800;
+  text-align: left;
 }

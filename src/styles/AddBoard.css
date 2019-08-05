@@ -1,7 +1,3 @@
-.AddBoard {
-  /* display: flex; */
-}
-
 .add-board-overlay {
   display: flex;
   align-items: flex-start;

@@ -10,7 +10,7 @@ const Home = ({ boards }) => {
       <ul className='boards-list'>
         {boards.allIds.map(boardId => (
           <li key={boardId} className='boards-list-item'>
-            <Link to={`/boards/${boardId}`}>
+            <Link to={`/boards/${boardId}`} className='board-link'>
               <div className='board-tile'>
                 <div className='board-tile-title'>
                   {boards.byId[boardId].name}
@@ -20,10 +20,10 @@ const Home = ({ boards }) => {
             </Link>
           </li>
         ))}
-        <li className='boards-list-item'>
-          <AddBoard />
-        </li>
       </ul>
+      <div className='add-board-wrapper'>
+        <AddBoard />
+      </div>
     </div>
   );
 };
