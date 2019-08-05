@@ -3,7 +3,7 @@ import Board from '../components/Board';
 
 const mapStateToProps = (state, ownProps) => {
   const id = ownProps.match.params.boardId;
-  const board = state.boards[id];
+  const board = state.boards.byId[id];
 
   return { board };
 };
