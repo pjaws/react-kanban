@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import ReactModal from 'react-modal';
+import PropTypes from 'prop-types';
 import '../styles/AddBoard.css';
 
 const AddBoard = ({ addBoard }) => {
@@ -42,6 +43,10 @@ const AddBoard = ({ addBoard }) => {
       </ReactModal>
     </>
   );
+};
+
+AddBoard.propTypes = {
+  addBoard: PropTypes.func.isRequired,
 };
 
 export default AddBoard;

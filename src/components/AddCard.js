@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 
 const AddCard = ({ addCard, cardListId }) => {
   const [isAdding, setIsAdding] = useState(false);
@@ -35,6 +36,11 @@ const AddCard = ({ addCard, cardListId }) => {
       )}
     </div>
   );
+};
+
+AddCard.propTypes = {
+  addCard: PropTypes.func.isRequired,
+  cardListId: PropTypes.string.isRequired,
 };
 
 export default AddCard;

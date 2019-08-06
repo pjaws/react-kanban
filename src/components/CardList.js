@@ -1,9 +1,10 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Card from '../containers/Card';
 import AddCard from '../containers/AddCard';
 import '../styles/CardList.css';
 
-const CardList = ({ cardList, cards }) => {
+const CardList = ({ cardList }) => {
   return (
     <div className='cardlist'>
       <div className='cardlist-header'>
@@ -19,6 +20,14 @@ const CardList = ({ cardList, cards }) => {
       </div>
     </div>
   );
+};
+
+CardList.propTypes = {
+  cardList: PropTypes.shape({
+    id: PropTypes.string,
+    name: PropTypes.string,
+    cards: PropTypes.arrayOf(PropTypes.string),
+  }).isRequired,
 };
 
 export default CardList;

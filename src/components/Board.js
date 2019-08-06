@@ -1,9 +1,10 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import CardList from '../containers/CardList';
 import AddCardList from '../containers/AddCardList';
 import '../styles/Board.css';
 
-const Board = ({ board, cardLists }) => {
+const Board = ({ board }) => {
   return (
     <div className='board'>
       <div className='board-header'>
@@ -21,6 +22,14 @@ const Board = ({ board, cardLists }) => {
       </div>
     </div>
   );
+};
+
+Board.propTypes = {
+  board: PropTypes.shape({
+    id: PropTypes.string,
+    name: PropTypes.string,
+    cardLists: PropTypes.arrayOf(PropTypes.string),
+  }).isRequired,
 };
 
 export default Board;

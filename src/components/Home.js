@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 import AddBoard from '../containers/AddBoard';
 import '../styles/Home.css';
 
@@ -26,6 +27,17 @@ const Home = ({ boards }) => {
       </div>
     </div>
   );
+};
+
+Home.propTypes = {
+  boards: PropTypes.shape({
+    byId: PropTypes.shape({
+      id: PropTypes.string,
+      name: PropTypes.string,
+      cardLists: PropTypes.arrayOf(PropTypes.string),
+    }),
+    allIds: PropTypes.arrayOf(PropTypes.string),
+  }).isRequired,
 };
 
 export default Home;
