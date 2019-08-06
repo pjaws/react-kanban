@@ -15,7 +15,7 @@ const CardList = ({ cardList, cards }) => {
         ))}
       </div>
       <div className='cardlist-footer'>
-        <AddCard />
+        <AddCard cardListId={cardList.id} />
       </div>
     </div>
   );
