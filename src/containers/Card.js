@@ -1,4 +1,5 @@
 import { connect } from 'react-redux';
+import { editCard } from '../actions';
 import Card from '../components/Card';
 
 const mapStateToProps = (state, ownProps) => {
@@ -7,4 +8,11 @@ const mapStateToProps = (state, ownProps) => {
   return { card };
 };
 
-export default connect(mapStateToProps)(Card);
+const mapDispatchToProps = dispatch => ({
+  editCard: (cardId, text) => dispatch(editCard(cardId, text)),
+});
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps,
+)(Card);

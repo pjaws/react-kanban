@@ -34,6 +34,7 @@ const initialState = {
       '5': { id: '5', text: 'Install dishwasher' },
       '6': { id: '6', text: 'Buy coffee' },
     },
+    allIds: ['1', '2', '3', '4', '5', '6'],
   },
 };
 

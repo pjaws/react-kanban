@@ -2,6 +2,7 @@ import shortid from 'shortid';
 
 export const ADD_BOARD = 'ADD_BOARD';
 export const ADD_CARD = 'ADD_CARD';
+export const EDIT_CARD = 'EDIT_CARD';
 
 export const addBoard = name => {
   const id = shortid.generate();
@@ -24,6 +25,16 @@ export const addCard = (text, cardListId) => {
       cardId,
       text,
       cardListId,
+    },
+  };
+};
+
+export const editCard = (cardId, text) => {
+  return {
+    type: EDIT_CARD,
+    payload: {
+      cardId,
+      text,
     },
   };
 };
