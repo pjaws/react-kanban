@@ -1,0 +1,26 @@
+.board {
+  display: flex;
+  flex-direction: column;
+}
+
+.board-header {
+  padding: 0.5rem 0.25rem;
+}
+
+.board-header-title {
+  margin-top: 0;
+  text-align: left;
+}
+
+.board-content {
+  display: flex;
+}
+
+.cardlist-wrapper {
+  width: 20%;
+  margin: 0 0.25rem;
+}
+
+.cardlist-wrapper:first-child {
+  margin-left: 0.5rem;
+}

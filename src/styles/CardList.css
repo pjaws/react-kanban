@@ -1,0 +1,24 @@
+.cardlist {
+  background-color: #d5d7d9;
+  border-radius: 0.175rem;
+}
+
+.cardlist-header {
+  padding: 0.375rem 0.5rem 0.375rem 0.75rem;
+}
+
+.cardlist-title {
+  margin: 0;
+  color: #242628;
+  font-size: 1rem;
+  font-weight: 600;
+  text-align: left;
+}
+
+.cardlist-cards {
+  padding: 0.375rem;
+}
+
+.cardlist-footer {
+  padding: 0.5rem;
+}

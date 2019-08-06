@@ -1,6 +1,7 @@
 import React from 'react';
 import CardList from '../containers/CardList';
 import AddCardList from '../containers/AddCardList';
+import '../styles/Board.css';
 
 const Board = ({ board, cardLists }) => {
   return (
