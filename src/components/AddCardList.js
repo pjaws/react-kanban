@@ -18,7 +18,7 @@ const AddCardList = ({ addCardList, boardId }) => {
   return (
     <>
       <button className='add-cardlist-btn' onClick={() => handleClick()}>
-        <p>+ Add a List</p>
+        + Add a List
       </button>
       <ReactModal isOpen={isModalOpen} onRequestClose={handleReqClose}>
         <form onSubmit={e => handleSubmit(e)}>
