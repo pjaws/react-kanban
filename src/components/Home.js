@@ -36,7 +36,7 @@ Home.propTypes = {
       name: PropTypes.string,
       cardLists: PropTypes.arrayOf(PropTypes.string),
     }),
-    allIds: PropTypes.arrayOf(PropTypes.string),
+    allIds: PropTypes.arrayOf(PropTypes.string).isRequired,
   }).isRequired,
 };
 

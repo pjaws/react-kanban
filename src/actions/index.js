@@ -12,7 +12,6 @@ export const addBoard = name => {
     payload: {
       id,
       name,
-      lists: [],
     },
   };
 };
