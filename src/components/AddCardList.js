@@ -1,11 +1,42 @@
-import React from 'react';
+import React, { useState } from 'react';
+import PropTypes from 'prop-types';
+import ReactModal from 'react-modal';
 
-const AddCardList = () => {
+const AddCardList = ({ addCardList, boardId }) => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [listName, setListName] = useState('');
+  const handleClick = () => setIsModalOpen(true);
+  const handleReqClose = () => setIsModalOpen(false);
+  const handleChange = e => {
+    setListName(e.target.value);
+  };
+  const handleSubmit = e => {
+    e.preventDefault();
+    setIsModalOpen(false);
+    addCardList(listName, boardId);
+  };
   return (
-    <div className='add-cardlist'>
-      <p>+ Add a List</p>
-    </div>
+    <>
+      <button className='add-cardlist-btn' onClick={() => handleClick()}>
+        <p>+ Add a List</p>
+      </button>
+      <ReactModal isOpen={isModalOpen} onRequestClose={handleReqClose}>
+        <form onSubmit={e => handleSubmit(e)}>
+          <input
+            type='text'
+            className='input'
+            onChange={e => handleChange(e)}
+          />
+          <button className='btn btn-success'>Create List</button>
+        </form>
+      </ReactModal>
+    </>
   );
+};
+
+AddCardList.propTypes = {
+  addCardList: PropTypes.func.isRequired,
+  boardId: PropTypes.string.isRequired,
 };
 
 export default AddCardList;

@@ -13,11 +13,11 @@ const Board = ({ board }) => {
       <div className='board-content'>
         {board.cardLists.map((id, index) => (
           <div className='cardlist-wrapper' key={index}>
-            <CardList id={id} index={index} />
+            <CardList id={id} index={index} boardId={board.id} />
           </div>
         ))}
         <div className='cardlist-wrapper'>
-          <AddCardList />
+          <AddCardList boardId={board.id} />
         </div>
       </div>
     </div>

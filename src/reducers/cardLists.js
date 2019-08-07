@@ -1,5 +1,19 @@
 import { combineReducers } from 'redux';
-import { ADD_CARD } from '../actions';
+import { ADD_CARD, ADD_CARD_LIST } from '../actions';
+
+const addCardList = (state, action) => {
+  const { payload } = action;
+  const { cardListId, name } = payload;
+
+  return {
+    ...state,
+    [cardListId]: {
+      id: cardListId,
+      name,
+      cards: [],
+    },
+  };
+};
 
 const addCard = (state, action) => {
   const { payload } = action;
@@ -18,6 +32,8 @@ const addCard = (state, action) => {
 
 const cardListsById = (state = {}, action) => {
   switch (action.type) {
+    case ADD_CARD_LIST:
+      return addCardList(state, action);
     case ADD_CARD:
       return addCard(state, action);
     default:
@@ -26,7 +42,12 @@ const cardListsById = (state = {}, action) => {
 };
 
 const allCardLists = (state = [], action) => {
-  return state;
+  switch (action.type) {
+    case ADD_CARD_LIST:
+      return state.concat(action.payload.cardListId);
+    default:
+      return state;
+  }
 };
 
 export default combineReducers({
