@@ -1,5 +1,5 @@
 import { combineReducers } from 'redux';
-import { ADD_CARD, EDIT_CARD } from '../actions';
+import { ADD_CARD, EDIT_CARD } from '../constants/ActionTypes';
 
 const addCard = (state, action) => {
   const { payload } = action;

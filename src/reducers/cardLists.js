@@ -1,9 +1,8 @@
 import { combineReducers } from 'redux';
-import { ADD_CARD, ADD_CARD_LIST } from '../actions';
+import { ADD_CARD, ADD_CARD_LIST } from '../constants/ActionTypes';
 
 const addCardList = (state, action) => {
-  const { payload } = action;
-  const { cardListId, name } = payload;
+  const { cardListId, name } = action.payload;
 
   return {
     ...state,
@@ -16,8 +15,7 @@ const addCardList = (state, action) => {
 };
 
 const addCard = (state, action) => {
-  const { payload } = action;
-  const { cardId, cardListId } = payload;
+  const { cardId, cardListId } = action.payload;
 
   const cardList = state[cardListId];
 
