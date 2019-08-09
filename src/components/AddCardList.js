@@ -18,7 +18,7 @@ const AddCardList = ({ addCardList, boardId }) => {
   return (
     <>
       <button className='add-cardlist-btn' onClick={() => handleClick()}>
-        <i class='fas fa-plus' />
+        <i className='fas fa-plus' />
         &nbsp;
         <span className='btn-text'>Add a List</span>
       </button>

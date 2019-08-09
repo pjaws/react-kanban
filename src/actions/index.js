@@ -47,3 +47,13 @@ export const editCard = (cardId, text) => {
     },
   };
 };
+
+export const deleteCard = (cardId, cardListId) => {
+  return {
+    type: types.DELETE_CARD,
+    payload: {
+      cardId,
+      cardListId,
+    },
+  };
+};

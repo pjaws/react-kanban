@@ -1,15 +1,19 @@
 import { connect } from 'react-redux';
-import { editCard } from '../actions';
+import { editCard, deleteCard } from '../actions';
 import Card from '../components/Card';
 
 const mapStateToProps = (state, ownProps) => {
   const card = state.cards.byId[ownProps.id];
 
-  return { card };
+  return {
+    ...ownProps,
+    card,
+  };
 };
 
 const mapDispatchToProps = dispatch => ({
   editCard: (cardId, text) => dispatch(editCard(cardId, text)),
+  deleteCard: (cardId, cardListId) => dispatch(deleteCard(cardId, cardListId)),
 });
 
 export default connect(

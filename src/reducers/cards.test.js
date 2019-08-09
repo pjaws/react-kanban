@@ -1,5 +1,5 @@
 import reducer from './cards';
-import { ADD_CARD, EDIT_CARD } from '../constants/ActionTypes';
+import { ADD_CARD, EDIT_CARD, DELETE_CARD } from '../constants/ActionTypes';
 
 describe('cardsReducer', () => {
   describe('default state', () => {
@@ -48,6 +48,30 @@ describe('cardsReducer', () => {
           '1': { id: '1', text: 'Mow nothing at all' },
         },
         allIds: ['1'],
+      };
+
+      expect(reducer(initialState, action)).toEqual(expected);
+    });
+  });
+
+  describe('DELETE_CARD', () => {
+    it('should return the correct state', () => {
+      const action = {
+        type: DELETE_CARD,
+        payload: {
+          cardId: '1',
+          cardListId: '1',
+        },
+      };
+      const initialState = {
+        byId: {
+          '1': { id: '1', text: 'Mow nothing at all' },
+        },
+        allIds: ['1'],
+      };
+      const expected = {
+        byId: {},
+        allIds: [],
       };
 
       expect(reducer(initialState, action)).toEqual(expected);

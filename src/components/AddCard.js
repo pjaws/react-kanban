@@ -19,7 +19,7 @@ const AddCard = ({ addCard, cardListId }) => {
     <div className='add-card'>
       {!isAdding && (
         <button className='add-card-btn' onClick={() => handleClick()}>
-          <i class='fas fa-plus' />
+          <i className='fas fa-plus' />
           &nbsp;
           <span className='btn-text'>Add a Card</span>
         </button>

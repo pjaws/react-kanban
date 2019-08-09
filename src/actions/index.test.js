@@ -86,4 +86,23 @@ describe('actions', () => {
       expect(store.getActions()).toEqual(expected);
     });
   });
+
+  describe('deleteCard', () => {
+    it('should dispatch the proper action and payload', () => {
+      const cardId = '1';
+      const cardListId = '1';
+      const expected = [
+        {
+          type: types.DELETE_CARD,
+          payload: {
+            cardId,
+            cardListId,
+          },
+        },
+      ];
+
+      store.dispatch(actions.deleteCard(cardId, cardListId));
+      expect(store.getActions()).toEqual(expected);
+    });
+  });
 });

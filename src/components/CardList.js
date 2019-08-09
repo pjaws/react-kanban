@@ -12,7 +12,7 @@ const CardList = ({ cardList }) => {
       </div>
       <div className='cardlist-cards'>
         {cardList.cards.map((id, index) => (
-          <Card key={index} index={index} id={id} />
+          <Card key={index} index={index} id={id} cardListId={cardList.id} />
         ))}
       </div>
       <div className='cardlist-footer'>
