@@ -25,6 +25,16 @@ export const addCardList = (name, boardId) => {
   };
 };
 
+export const editCardList = (cardListId, name) => {
+  return {
+    type: types.EDIT_CARD_LIST,
+    payload: {
+      cardListId,
+      name,
+    },
+  };
+};
+
 export const addCard = (text, cardListId) => {
   const cardId = shortid.generate();
 

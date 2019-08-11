@@ -1,5 +1,10 @@
 import reducer from './cardLists';
-import { ADD_CARD, ADD_CARD_LIST, DELETE_CARD } from '../constants/ActionTypes';
+import {
+  ADD_CARD,
+  ADD_CARD_LIST,
+  EDIT_CARD_LIST,
+  DELETE_CARD,
+} from '../constants/ActionTypes';
 
 describe('cardListsReducer', () => {
   describe('initial state', () => {
@@ -28,6 +33,32 @@ describe('cardListsReducer', () => {
       };
 
       expect(reducer(undefined, action)).toEqual(expected);
+    });
+  });
+
+  describe('EDIT_CARD_LIST', () => {
+    it('should return the correct state', () => {
+      const action = {
+        type: EDIT_CARD_LIST,
+        payload: {
+          cardListId: '1',
+          cardList: { id: '1', name: `Paul's Chores`, cards: [] },
+        },
+      };
+      const initialState = {
+        byId: {
+          '1': { id: '1', name: 'Chores', cards: [] },
+        },
+        allIds: ['1'],
+      };
+      const expected = {
+        byId: {
+          '1': { id: '1', name: `Paul's Chores`, cards: [] },
+        },
+        allIds: ['1'],
+      };
+
+      expect(reducer(initialState, action)).toEqual(expected);
     });
   });
 

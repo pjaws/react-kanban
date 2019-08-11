@@ -1,5 +1,10 @@
 import { combineReducers } from 'redux';
-import { ADD_CARD, ADD_CARD_LIST, DELETE_CARD } from '../constants/ActionTypes';
+import {
+  ADD_CARD,
+  ADD_CARD_LIST,
+  EDIT_CARD_LIST,
+  DELETE_CARD,
+} from '../constants/ActionTypes';
 
 const addCardList = (state, action) => {
   const { cardListId, name } = action.payload;
@@ -10,6 +15,17 @@ const addCardList = (state, action) => {
       id: cardListId,
       name,
       cards: [],
+    },
+  };
+};
+
+const editCardList = (state, action) => {
+  const { cardListId, cardList } = action.payload;
+
+  return {
+    ...state,
+    [cardListId]: {
+      ...cardList,
     },
   };
 };
@@ -44,6 +60,8 @@ const cardListsById = (state = {}, action) => {
   switch (action.type) {
     case ADD_CARD_LIST:
       return addCardList(state, action);
+    case EDIT_CARD_LIST:
+      return editCardList(state, action);
     case ADD_CARD:
       return addCard(state, action);
     case DELETE_CARD:

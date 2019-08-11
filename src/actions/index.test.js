@@ -48,6 +48,25 @@ describe('actions', () => {
     });
   });
 
+  describe('editCardList', () => {
+    it('should dispatch the proper action and payload', () => {
+      const name = 'Chores List';
+      const cardListId = '1';
+      const expected = [
+        {
+          type: types.EDIT_CARD_LIST,
+          payload: {
+            cardListId,
+            name,
+          },
+        },
+      ];
+
+      store.dispatch(actions.editCardList(cardListId, name));
+      expect(store.getActions()).toEqual(expected);
+    });
+  });
+
   describe('addCard', () => {
     it('should dispatch the proper action and payload', () => {
       const text = 'Join a pyramid scheme.';
